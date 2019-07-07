@@ -1,8 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Example 1:
 
-This is a temporary script file.
+Input: [1,2,3],[2]
+Output: 1
+Explanation: The only heater was placed in the position 2,
+and if we use the radius 1 standard, then all the houses can be warmed.
+
+
+Example 2:
+
+Input: [1,2,3,4],[1,4]
+Output: 1
+Explanation: The two heater was placed in the position 1 and 4.
+We need to use radius 1 standard, then all the houses can be warmed.
 """
 
 houses1 = [1,2,3]
@@ -36,18 +47,18 @@ class Solution(object):
         :type heaters: List[int]
         :rtype: int
         """
-        
+
         houses.sort()
         heaters.sort()
         N, i, maxRadius = len(heaters), 0, 0
-        
+
         for house in houses:
             while i+1 < N and heaters[i+1] < house:
                 i += 1
-            maxRadius = max(maxRadius, min([abs(h-house) for h in heaters[i:i+2]]))   
+            maxRadius = max(maxRadius, min([abs(h-house) for h in heaters[i:i+2]]))
         return maxRadius
-        
-        
+
+
 
 S = Solution()
 S.findRadius(houses1,heaters1)  #1
@@ -57,6 +68,3 @@ S.findRadius(houses4,heaters4)  #1
 S.findRadius(houses5,heaters5) #1
 S.findRadius(houses6,heaters6) #9
 S.findRadius(houses7,heaters7)
-
-
-            
