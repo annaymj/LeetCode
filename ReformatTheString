@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Apr 18 20:43:40 2020
+
+@author: annayu
+"""
+s1 = "a0b1c2"
+s2 = "leetcode"
+s3 = "1229857369"
+s4 = "covid2019"
+s5 = "ab123"
+class Solution:
+    def reformat(self, s: str) -> str:
+        result = ""
+        alpha_list = []
+        number_list = []
+        
+        for item in s:
+            if item.isalpha():
+                alpha_list.append(item)
+            if item.isnumeric():
+                number_list.append(item)
+                
+        if abs(len(alpha_list) - len(number_list)) > 1:
+            return ""
+        
+        if len(alpha_list) > len(number_list):
+            for i in range(len(number_list)):
+                result += alpha_list[i]
+                result += number_list[i]
+            result += alpha_list[-1]
+            return result
+        
+        if len(alpha_list) < len(number_list):
+            for i in range(len(alpha_list)):
+                result += number_list[i]
+                result += alpha_list[i]
+            result += number_list[-1]
+            return result
+                
+        if len(alpha_list) ==len(number_list):
+            for i in range(len(alpha_list)):
+                result += alpha_list[i]
+                result += number_list[i]
+            return result
+        
+
+S = Solution()
+S.reformat(s1)   
+S.reformat(s2) 
+S.reformat(s3)
+S.reformat(s4)  
+S.reformat(s5)
