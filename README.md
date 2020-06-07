@@ -5,4 +5,4 @@ Those are accepted solutions for questions in Leetcode.
 ### Prerequisites
 Install Python3
 ### Contributing
-The above code were written by Anna Yu 
+The above code solutions  were written by [Anna Yu](https://www.linkedin.com/in/anna-mengjie-yu-0b4a5929/) 
