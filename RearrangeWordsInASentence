@@ -1,0 +1,77 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May 16 20:46:05 2020
+
+@author: annayu
+
+Example 1:
+
+Input: text = "Leetcode is cool"
+Output: "Is cool leetcode"
+Explanation: There are 3 words, "Leetcode" of length 8, "is" of length 2 and "cool" of length 4.
+Output is ordered by length and the new first word starts with capital letter.
+
+Example 2:
+Input: text = "Keep calm and code on"
+Output: "On and keep calm code"
+Explanation: Output is ordered as follows:
+"On" 2 letters.
+"and" 3 letters.
+"keep" 4 letters in case of tie order by position in original text.
+"calm" 4 letters.
+"code" 4 letters.
+
+Example 3:
+Input: text = "To be or not to be"
+Output: "To be or to be not"
+"""
+text1 = "Leetcode is cool"
+text2 = "Keep calm and code on"
+text3 = "To be or not to be"
+
+class Solution:
+    def getPosition(self,curr_text_len, result, result_len):
+        for j in range(len(result)):
+            # bigger than
+            if curr_text_len >= result_len[-1]:
+                return len(result)
+                     
+            # if smaller
+            elif curr_text_len < result_len[j]:  
+                return j
+                
+            # if bigger than current, but smaller than the next
+            elif j < len(result)-1 and curr_text_len >= result_len[j] and curr_text_len <result_len[j+1]:  
+                return j+1
+      
+        
+    def arrangeWords_slow(self, text): # time exceeded
+        text = text.split(' ')
+        result = [text[0].lower()]
+        result_len = [len(text[0])]
+        
+        for i in range(1,len(text)):
+            curr_text = text[i]
+            curr_text_len = len(text[i])
+            
+            # get position
+            position = self.getPosition(curr_text_len,result,result_len)
+            result.insert(position,curr_text)
+            result_len.insert(position,curr_text_len)
+            
+            output = ' '.join(result)
+        return output.capitalize()
+        
+S = Solution()
+S.arrangeWords(text1)
+S.arrangeWords(text2)
+S.arrangeWords(text3)
+
+                    
+                    
+            
+        
+        
+        
+                
