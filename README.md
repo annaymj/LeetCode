@@ -1,4 +1,4 @@
-![Image of Anna Leetcode](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F807340670673884511%2F&psig=AOvVaw3Vq3auRvNPK6uf3lLX__kY&ust=1606161337142000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjjrLX3lu0CFQAAAAAdAAAAABAQ)
+![Image of Anna Leetcode](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ITkMfJn4tNGrxsAAg1O0_aRXH3ZE5q1h0g&usqp=CAU)
 
 
 
